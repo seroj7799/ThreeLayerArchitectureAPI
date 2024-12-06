@@ -1,0 +1,6 @@
+@ThreeLayerArchitectureAPI_HostAddress = http://localhost:5263
+
+GET {{ThreeLayerArchitectureAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
