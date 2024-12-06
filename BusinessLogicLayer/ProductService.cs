@@ -40,7 +40,10 @@ namespace BusinessLogicLayer
 
         public void AddProduct(ProductDTO product)
         {
-            Product productEntity = _productMapper.Map<ProductDTO,Product>(product);
+            //any bussines logic here
+            Product productEntity = new Product();
+            productEntity.Name = product.Name;
+            productEntity.Description = product.Description;
             _productRepository.Add(productEntity);
         }
 
@@ -65,6 +68,7 @@ namespace BusinessLogicLayer
             {
                 productToUpdate.Name = product.Name;
                 productToUpdate.Description = product.Description;
+                productToUpdate.UpdatedDate = DateTime.Now;
                 _productRepository.Update(productToUpdate);
             }
             else
